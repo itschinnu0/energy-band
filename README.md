@@ -60,6 +60,6 @@ uv run streamlit run app.py
 
 Build a standalone single-file Windows executable:
 ```powershell
-uv run pyinstaller --noconfirm --onefile --clean --copy-metadata streamlit --add-data "app.py;." launcher.py
+uv run pyinstaller --noconfirm --onefile --clean --copy-metadata streamlit --collect-data streamlit --collect-submodules streamlit --add-data "app.py;." launcher.py
 ```
 The resulting executable is generated in `dist/launcher.exe`.

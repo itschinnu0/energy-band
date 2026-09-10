@@ -1,10 +1,13 @@
 # -*- mode: python ; coding: utf-8 -*-
 from PyInstaller.utils.hooks import collect_data_files
+from PyInstaller.utils.hooks import collect_submodules
 from PyInstaller.utils.hooks import copy_metadata
 
 datas = [('app.py', '.')]
+hiddenimports = []
 datas += collect_data_files('streamlit')
 datas += copy_metadata('streamlit')
+hiddenimports += collect_submodules('streamlit')
 
 
 a = Analysis(
@@ -12,7 +15,7 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=datas,
-    hiddenimports=[],
+    hiddenimports=hiddenimports,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
