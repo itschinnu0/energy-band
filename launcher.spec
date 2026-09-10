@@ -3,11 +3,13 @@ from PyInstaller.utils.hooks import collect_data_files
 from PyInstaller.utils.hooks import collect_submodules
 from PyInstaller.utils.hooks import copy_metadata
 
-datas = [('app.py', '.')]
+datas = [('physics', 'physics'), ('visualization', 'visualization'), ('app.py', '.')]
 hiddenimports = []
 datas += collect_data_files('streamlit')
 datas += copy_metadata('streamlit')
 hiddenimports += collect_submodules('streamlit')
+hiddenimports += collect_submodules('physics')
+hiddenimports += collect_submodules('visualization')
 
 
 a = Analysis(
