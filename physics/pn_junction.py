@@ -1,0 +1,1 @@
+"""PN-junction model."""
