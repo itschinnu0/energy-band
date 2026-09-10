@@ -56,7 +56,8 @@ def electric_field_from_potential(
     validate_finite_array(phi, name="Potential phi")
 
     # E = -d(phi)/dx
-    dphi_dx = np.gradient(phi, x)
+    # edge_order=2 uses second-order accurate differences at boundaries
+    dphi_dx = np.gradient(phi, x, edge_order=2)
     return -dphi_dx
 
 
