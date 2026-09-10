@@ -20,12 +20,14 @@ def resolve_path(path):
 
 def main():
     app_path = resolve_path("app.py")
+    # Pass through user-provided command-line arguments (e.g., --server.port, --server.headless)
+    extra_args = sys.argv[1:]
     sys.argv = [
         "streamlit",
         "run",
         app_path,
         "--global.developmentMode=false",
-    ]
+    ] + extra_args
     sys.exit(stcli.main())
 
 
