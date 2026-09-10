@@ -25,6 +25,19 @@ from physics.bjt import (
     simulate_npn_bjt,
 )
 
+from physics.mos import (
+    calculate_oxide_capacitance,
+    calculate_fermi_potential,
+    calculate_flat_band_voltage,
+    calculate_level1_threshold_voltage,
+    calculate_depletion_width,
+    classify_mos_operating_state,
+    calculate_semiconductor_charge_level2,
+    solve_surface_potential_level2,
+    simulate_mos,
+)
+from physics.solver import solve_bracketed_root
+
 __all__ = [
     "EnergyBandError",
     "InvalidParameterError",
@@ -42,4 +55,14 @@ __all__ = [
     "simulate_pn_junction",
     "classify_bjt_operating_region",
     "simulate_npn_bjt",
+    "calculate_oxide_capacitance",
+    "calculate_fermi_potential",
+    "calculate_flat_band_voltage",
+    "calculate_level1_threshold_voltage",
+    "calculate_depletion_width",
+    "classify_mos_operating_state",
+    "calculate_semiconductor_charge_level2",
+    "solve_surface_potential_level2",
+    "simulate_mos",
+    "solve_bracketed_root",
 ]
